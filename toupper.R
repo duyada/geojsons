@@ -52,8 +52,10 @@ rm_accent <- function(str,pattern="all") {
 }
 
 for (i in 1:n_municipios) {
-  result[["features"]][[i]][["properties"]][["name"]] <-
-    rm_accent(toupper(result[["features"]][[i]][["properties"]][["name"]]))
+  result[["features"]][[i]][["properties"]][["description"]] <-
+    stringr::str_to_title(result[["features"]][[i]][["properties"]][["nome"]])
+  result[["features"]][[i]][["properties"]][["nome"]] <-
+    rm_accent(toupper(result[["features"]][[i]][["properties"]][["nome"]]))
 }
 
 write(toJSON(result), 
