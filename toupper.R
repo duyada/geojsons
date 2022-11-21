@@ -1,6 +1,6 @@
 library(rjson)
 
-result <- fromJSON(file = "/Users/yada/Documents/GitHub/geojsons/paraiba_municipios_raw.json")
+result <- fromJSON(file = "/Users/yada/Documents/GitHub/geojsons/joao_pessoa_bairros_raw.json")
 
 n_municipios <- length(result[["features"]])
 
@@ -57,4 +57,4 @@ for (i in 1:n_municipios) {
 }
 
 write(toJSON(result), 
-      file = "/Users/yada/Documents/GitHub/geojsons/paraiba_municipios.json")
+      file = "/Users/yada/Documents/GitHub/geojsons/joao_pessoa_bairros.json")
